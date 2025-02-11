@@ -21,7 +21,7 @@ public_users.post("/register", (req, res) => {
   users.push({"username": username, "password": password});
   return res.status(201).json({ message: "User successfully registered" });
 });
-
+ 
 // Get all books
 public_users.get('/', (req, res) => {
   res.json({ books });
