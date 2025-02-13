@@ -21,7 +21,7 @@ public_users.post("/register", (req, res) => {
   users.push({"username": username, "password": password});
   return res.status(201).json({ message: "User successfully registered" });
 });
- 
+
 // Get all books
 public_users.get('/', (req, res) => {
   res.json({ books });
@@ -71,6 +71,7 @@ public_users.get('/review/:isbn', (req, res) => {
   } else {
     res.status(404).json({ message: "Book not found" });
   }
+  console.log(books[isbn]);
 });
 
 // Getall Books with Async Await
@@ -125,8 +126,8 @@ async function getBookByTitle(title) {
 // console.log("Getting all books");
 // getBooks();
 
-console.log("Getting book by ISBN");
-getBookByISBN('3'); // isbn = '3'
+// console.log("Getting book by ISBN");
+// getBookByISBN('3'); // isbn = '3'
 
 //console.log("Getting book by Title");
 //getBookByTitle('One Thousand and One Nights');
